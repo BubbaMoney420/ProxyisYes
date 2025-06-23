@@ -2,45 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DuckDuckGo Search</title>
+  <title>Mojeek Private Search</title>
   <style>
     body {
-      background: #111;
+      background-color: #1a1a1a;
       color: #eee;
       font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+    form {
+      display: flex;
+      flex-direction: row;
     }
     input[type="text"] {
-      width: 300px;
       padding: 12px;
       font-size: 18px;
-      border-radius: 6px;
+      border-radius: 6px 0 0 6px;
       border: none;
+      width: 350px;
       outline: none;
     }
     button {
       padding: 12px 20px;
       font-size: 18px;
-      border-radius: 6px;
+      border-radius: 0 6px 6px 0;
       border: none;
-      background-color: #5bbf40;
+      background-color: #00ad7c;
       color: white;
       cursor: pointer;
-      margin-left: 10px;
+      transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #4da837;
+      background-color: #009766;
+    }
+    .notice {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+      max-width: 400px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Search DuckDuckGo</h1>
-  <form id="searchForm" action="https://duckduckgo.com/" method="GET" target="_blank">
-    <input type="text" name="q" placeholder="Type your search here" required />
+  <h1>Search with Mojeek</h1>
+
+  <form action="https://www.mojeek.com/search" method="GET" target="_blank">
+    <input type="text" name="q" placeholder="Type your search here..." required />
     <button type="submit">Search</button>
   </form>
+
+  <div class="notice">
+    Mojeek is a truly independent, non-tracking search engine.<br>
+    <a href="https://www.mojeek.com/about/" target="_blank" style="color:#00ad7c;">Learn more</a>
+  </div>
 
 </body>
 </html>
