@@ -1,70 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Private Search</title>
+  <meta charset="UTF-8">
+  <title>Game Launcher Portal</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: white;
+      margin: 0;
+      background-color: #111;
+      color: #fff;
       font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      padding: 20px;
+      background-color: #222;
+      width: 100%;
       text-align: center;
-      margin-top: 15%;
     }
-
-    input[type="text"] {
-      padding: 12px;
-      font-size: 18px;
-      width: 350px;
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    #searchBar {
+      margin: 20px;
+      padding: 10px;
+      font-size: 16px;
+      width: 60%;
+      max-width: 400px;
       border-radius: 6px;
       border: none;
-      outline: none;
     }
-
-    button {
-      padding: 12px 20px;
-      font-size: 18px;
-      margin-left: 10px;
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
       border-radius: 6px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #444;
+    }
+    iframe {
+      width: 90vw;
+      height: 75vh;
       border: none;
-      background-color: #de5833;
-      color: white;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #c14924;
-    }
-
-    .note {
-      margin-top: 20px;
-      color: #aaa;
-      font-size: 14px;
+      background: #000;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Game Launcher Portal</h1>
+  </header>
 
-  <h1>Private DuckDuckGo Search</h1>
+  <input type="text" id="searchBar" oninput="filterGames()" placeholder="Search for a game..." />
 
-  <input type="text" id="search" placeholder="Search something private..." />
-  <button onclick="openPrivateTab()">Search</button>
+  <select id="gameSelector" onchange="loadGame()">
+    <option value="">-- Select a Game --</option>
+    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/4019638/index.html">Tiny Golf</option>
+    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/3847524/index.html">The Red Door</option>
+    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/3614935/index.html">Sokoban Puzzle</option>
+    <option value="https://eggy-car.github.io/eggy-car/">Eggy Car</option>
+  </select>
 
-  <div class="note">
-    Results will open in a new tab using <strong>DuckDuckGo</strong>.
-  </div>
+  <iframe id="gameFrame" src=""></iframe>
 
   <script>
-    function openPrivateTab() {
-      const query = document.getElementById("search").value.trim();
-      if (query) {
-        const ddgUrl = "https://duckduckgo.com/?q=" + encodeURIComponent(query);
-        window.open(ddgUrl, "_blank"); // Opens in a new browser tab
+    function loadGame() {
+      const url = document.getElementById("gameSelector").value;
+      document.getElementById("gameFrame").src = url;
+    }
+
+    function filterGames() {
+      const input = document.getElementById("searchBar").value.toLowerCase();
+      const select = document.getElementById("gameSelector");
+      const options = select.options;
+
+      for (let i = 1; i < options.length; i++) {
+        const text = options[i].text.toLowerCase();
+        options[i].style.display = text.includes(input) ? "" : "none";
       }
     }
   </script>
-
 </body>
 </html>
+
 
 
