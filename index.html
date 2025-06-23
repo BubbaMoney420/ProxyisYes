@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DuckDuckGo Search</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input[type="text"] {
+      width: 300px;
+      padding: 12px;
+      font-size: 18px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      border-radius: 6px;
+      border: none;
+      background-color: #5bbf40;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    button:hover {
+      background-color: #4da837;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Search DuckDuckGo</h1>
+  <form id="searchForm" action="https://duckduckgo.com/" method="GET" target="_blank">
+    <input type="text" name="q" placeholder="Type your search here" required />
+    <button type="submit">Search</button>
+  </form>
+
+</body>
+</html>
