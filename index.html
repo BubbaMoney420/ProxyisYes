@@ -36,11 +36,24 @@
     select {
       padding: 10px;
       font-size: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       border-radius: 6px;
       background-color: #222;
       color: #fff;
       border: 1px solid #444;
+    }
+    button {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #666;
     }
     iframe {
       width: 90vw;
@@ -65,6 +78,8 @@
     <option value="https://eggy-car.github.io/eggy-car/">Eggy Car</option>
   </select>
 
+  <button onclick="toggleFullScreen()">Toggle Fullscreen</button>
+
   <iframe id="gameFrame" src=""></iframe>
 
   <script>
@@ -83,9 +98,19 @@
         options[i].style.display = text.includes(input) ? "" : "none";
       }
     }
+
+    function toggleFullScreen() {
+      const iframe = document.getElementById("gameFrame");
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+      }
+    }
   </script>
 </body>
 </html>
-
-
-
