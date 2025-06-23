@@ -2,78 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>MetaGer Private Search</title>
+  <title>Private Search</title>
   <style>
     body {
-      background-color: #0d0d0d;
-      color: #eee;
+      background-color: #0e0e0e;
+      color: white;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+      text-align: center;
+      margin-top: 15%;
     }
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    form {
-      display: flex;
-      flex-direction: row;
-    }
+
     input[type="text"] {
       padding: 12px;
       font-size: 18px;
-      border-radius: 6px 0 0 6px;
-      border: none;
       width: 350px;
+      border-radius: 6px;
+      border: none;
       outline: none;
     }
+
     button {
       padding: 12px 20px;
       font-size: 18px;
-      border-radius: 0 6px 6px 0;
+      margin-left: 10px;
+      border-radius: 6px;
       border: none;
-      background-color: #e60000;
+      background-color: #de5833;
       color: white;
       cursor: pointer;
-      transition: background-color 0.3s;
     }
+
     button:hover {
-      background-color: #cc0000;
+      background-color: #c14924;
     }
-    .notice {
-      margin-top: 30px;
-      font-size: 14px;
+
+    .note {
+      margin-top: 20px;
       color: #aaa;
-      text-align: center;
-      max-width: 400px;
-    }
-    a {
-      color: #e60000;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Search with MetaGer</h1>
+  <h1>Private DuckDuckGo Search</h1>
 
-  <form action="https://metager.org/meta/meta.ger3" method="GET" target="_blank">
-    <input type="text" name="eingabe" placeholder="Type your search here..." required />
-    <button type="submit">Search</button>
-  </form>
+  <input type="text" id="search" placeholder="Search something private..." />
+  <button onclick="openPrivateTab()">Search</button>
 
-  <div class="notice">
-    MetaGer is an open-source, privacy-first metasearch engine based in Germany.<br>
-    <a href="https://metager.org/about" target="_blank">Learn more</a>
+  <div class="note">
+    Results will open in a new tab using <strong>DuckDuckGo</strong>.
   </div>
+
+  <script>
+    function openPrivateTab() {
+      const query = document.getElementById("search").value.trim();
+      if (query) {
+        const ddgUrl = "https://duckduckgo.com/?q=" + encodeURIComponent(query);
+        window.open(ddgUrl, "_blank"); // Opens in a new browser tab
+      }
+    }
+  </script>
 
 </body>
 </html>
+
 
