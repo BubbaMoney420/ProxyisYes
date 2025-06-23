@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Game Launcher Portal</title>
   <style>
     body {
@@ -68,14 +68,26 @@
     <h1>Game Launcher Portal</h1>
   </header>
 
-  <input type="text" id="searchBar" oninput="filterGames()" placeholder="Search for a game..." />
+  <input
+    type="text"
+    id="searchBar"
+    oninput="filterGames()"
+    placeholder="Search for a game..."
+  />
 
   <select id="gameSelector" onchange="loadGame()">
     <option value="">-- Select a Game --</option>
-    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/4019638/index.html">Tiny Golf</option>
-    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/3847524/index.html">The Red Door</option>
-    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/3614935/index.html">Sokoban Puzzle</option>
+    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/4019638/index.html">
+      Tiny Golf
+    </option>
+    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/3847524/index.html">
+      The Red Door
+    </option>
+    <option value="https://v6p9d9t4.ssl.hwcdn.net/html/3614935/index.html">
+      Sokoban Puzzle
+    </option>
     <option value="https://eggy-car.github.io/eggy-car/">Eggy Car</option>
+    <option value="https://r.studyschooltoday.eu.org">Study School Today</option>
   </select>
 
   <button onclick="toggleFullScreen()">Toggle Fullscreen</button>
