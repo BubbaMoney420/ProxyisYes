@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mojeek Private Search</title>
+  <title>MetaGer Private Search</title>
   <style>
     body {
-      background-color: #1a1a1a;
+      background-color: #0d0d0d;
       color: #eee;
       font-family: Arial, sans-serif;
       display: flex;
@@ -16,8 +16,8 @@
       margin: 0;
     }
     h1 {
-      margin-bottom: 20px;
       font-size: 36px;
+      margin-bottom: 20px;
     }
     form {
       display: flex;
@@ -36,13 +36,13 @@
       font-size: 18px;
       border-radius: 0 6px 6px 0;
       border: none;
-      background-color: #00ad7c;
+      background-color: #e60000;
       color: white;
       cursor: pointer;
       transition: background-color 0.3s;
     }
     button:hover {
-      background-color: #009766;
+      background-color: #cc0000;
     }
     .notice {
       margin-top: 30px;
@@ -51,21 +51,29 @@
       text-align: center;
       max-width: 400px;
     }
+    a {
+      color: #e60000;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Search with Mojeek</h1>
+  <h1>Search with MetaGer</h1>
 
-  <form action="https://www.mojeek.com/search" method="GET" target="_blank">
-    <input type="text" name="q" placeholder="Type your search here..." required />
+  <form action="https://metager.org/meta/meta.ger3" method="GET" target="_blank">
+    <input type="text" name="eingabe" placeholder="Type your search here..." required />
     <button type="submit">Search</button>
   </form>
 
   <div class="notice">
-    Mojeek is a truly independent, non-tracking search engine.<br>
-    <a href="https://www.mojeek.com/about/" target="_blank" style="color:#00ad7c;">Learn more</a>
+    MetaGer is an open-source, privacy-first metasearch engine based in Germany.<br>
+    <a href="https://metager.org/about" target="_blank">Learn more</a>
   </div>
 
 </body>
 </html>
+
